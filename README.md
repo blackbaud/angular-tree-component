@@ -3,14 +3,14 @@ This is a fork of [@circlon/angular-tree-component](https://github.com/CirclonGr
 Since it appears that the original project has been abandoned, I have decided to take on its development and ensure compatibility with Ivy and newer versions of Angular.
 ## Getting started
 
-Install `angular-tree-component`:
+Install `@blackbaud/angular-tree-component`:
 
-```npm install @ali-hm/angular-tree-component```
+```npm install @blackbaud/angular-tree-component```
 
 Import `TreeModule`:
 
 ```
-import { TreeModule } from '@ali-hm/angular-tree-component';
+import { TreeModule } from '@blackbaud/angular-tree-component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,7 +23,7 @@ export class AppModule {}
 Add css to `styles.scss` or include in `angular.json`:
 
 ```
-@import '@ali-hm/angular-tree-component/css/angular-tree-component.css';
+@import '@blackbaud/angular-tree-component/css/angular-tree-component.css';
 ```
 
 ## Docs, Demos & More
