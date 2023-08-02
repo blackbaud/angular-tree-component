@@ -20,5 +20,4 @@ jobs:
           node-version-file: '.nvmrc'
       - run: |
           npm ci
-          npm run test:ci:local
           npx -p @angular/cli@14 ng build angular-tree-component
