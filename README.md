@@ -3,7 +3,7 @@ This is a fork of [@circlon/angular-tree-component](https://github.com/CirclonGr
 Since it appears that the original project has been abandoned, I have decided to take on its development and ensure compatibility with Ivy and newer versions of Angular.
 ## Getting started
 
-Install `angular-tree-component`:
+Install `@blackbaud/angular-tree-component`:
 
 ```npm install @blackbaud/angular-tree-component```
 
