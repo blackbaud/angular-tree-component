@@ -46,6 +46,7 @@ jobs:
         run: |
           node ./scripts/prepare-package.mjs
           cd dist/angular-tree-component
+          npm config set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
           npm publish --tag=next --access=public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
