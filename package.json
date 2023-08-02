@@ -1,9 +1,10 @@
 {
-  "name": "@ali-hm/angular-tree-component",
-  "version": "12.0.4",
+  "name": "angular-tree-component",
+  "version": "1.0.0-alpha.0",
+  "private": true,
   "description": "A simple yet powerful tree component for Angular 14+",
-  "author": "ali-hm",
-  "homepage": "https://github.com/ali-hm/angular-tree-component",
+  "author": "blackbaud",
+  "homepage": "https://github.com/blackbaud/angular-tree-component",
   "license": "MIT",
   "keywords": [
     "ng",
@@ -39,9 +40,7 @@
     "test:dev": "testcafe chrome:headless e2e/*.testcafe.js",
     "test:debug": "testcafe chrome e2e/*.testcafe.js --inspect-brk",
     "test:slow": "testcafe chrome e2e/*.testcafe.js --speed 0.1",
-    "e2e:tsc": "../node_modules/.bin/tsc --p e2e/tsconfig.json",
-    "publish:release": "npm publish ./dist/angular-tree-component --access=public",
-    "publish:next": "npm publish ./dist/angular-tree-component --tag next --access=public"
+    "e2e:tsc": "../node_modules/.bin/tsc --p e2e/tsconfig.json"
   },
   "files": [
     "dist/"
@@ -82,6 +81,7 @@
     "@typescript-eslint/parser": "5.43.0",
     "codelyzer": "6.0.2",
     "eslint": "^8.28.0",
+    "fs-extra": "11.1.1",
     "html-dnd": "1.2.0",
     "http-server": "0.9.0",
     "husky": "^4.2.3",
@@ -109,10 +109,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ali-hm/angular-tree-component.git"
+    "url": "git+https://github.com/blackbaud/angular-tree-component.git"
   },
   "bugs": {
-    "url": "https://github.com/ali-hm/angular-tree-component/issues"
+    "url": "https://github.com/blackbaud/angular-tree-component/issues"
   },
   "engines": {
     "node": ">=10.21.0"

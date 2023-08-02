@@ -5,12 +5,12 @@ Since it appears that the original project has been abandoned, I have decided to
 
 Install `angular-tree-component`:
 
-```npm install @ali-hm/angular-tree-component```
+```npm install @blackbaud/angular-tree-component```
 
 Import `TreeModule`:
 
 ```
-import { TreeModule } from '@ali-hm/angular-tree-component';
+import { TreeModule } from '@blackbaud/angular-tree-component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,7 +23,7 @@ export class AppModule {}
 Add css to `styles.scss` or include in `angular.json`:
 
 ```
-@import '@ali-hm/angular-tree-component/css/angular-tree-component.css';
+@import '@blackbaud/angular-tree-component/css/angular-tree-component.css';
 ```
 
 ## Docs, Demos & More
