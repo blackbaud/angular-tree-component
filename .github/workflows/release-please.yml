@@ -17,12 +17,11 @@ jobs:
           pull-request-title-pattern: 'chore: release ${version}'
           labels: 'autorelease ${{ github.ref_name }}: pending'
           release-labels: 'autorelease ${{ github.ref_name }}: tagged'
-          release-as: '1.0.0-alpha.0'
-          prerelease: true
+          release-as: '1.0.0'
+          prerelease: false
           draft-pull-request: true
           include-v-in-tag: false
           token: '${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}'
-          bootstrap-sha: '2bb58d6e43e338e7f0733584a42d1f2988f762c6'
       - uses: actions/checkout@v3
         with:
           token: '${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}'
