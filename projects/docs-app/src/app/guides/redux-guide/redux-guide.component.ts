@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { CodeExampleComponent } from '../../custom-elements/code/code-example.component';
 
 @Component({
-  selector: 'app-redux-guide',
-  templateUrl: './redux-guide.component.html',
-  styleUrls: ['./redux-guide.component.scss']
+    selector: 'app-redux-guide',
+    templateUrl: './redux-guide.component.html',
+    styleUrls: ['./redux-guide.component.scss'],
+    imports: [CodeExampleComponent]
 })
 export class ReduxGuideComponent {
   options = `

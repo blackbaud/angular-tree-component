@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ITreeOptions } from 'angular-tree-component';
+import { ITreeOptions, TreeModule } from '@blackbaud/angular-tree-component';
 
 @Component({
-  selector: 'app-auto-scroll',
-  templateUrl: './auto-scroll.component.html',
-  styleUrls: ['./auto-scroll.component.scss']
+    selector: 'app-auto-scroll',
+    templateUrl: './auto-scroll.component.html',
+    styleUrls: ['./auto-scroll.component.scss'],
+    imports: [TreeModule]
 })
 export class AutoScrollComponent implements OnInit {
 

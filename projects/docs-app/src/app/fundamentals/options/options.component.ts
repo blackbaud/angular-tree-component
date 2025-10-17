@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { CodeExampleComponent } from '../../custom-elements/code/code-example.component';
 
 @Component({
-  selector: 'app-options',
-  templateUrl: './options.component.html',
-  styleUrls: ['./options.component.scss']
+    selector: 'app-options',
+    templateUrl: './options.component.html',
+    styleUrls: ['./options.component.scss'],
+    imports: [CodeExampleComponent]
 })
 export class OptionsComponent implements OnInit {
 
   options = `
-import { TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from '@circlon/angular-tree-component';
+import { TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from '@circlon/@blackbaud/angular-tree-component';
 
 class MyComponent {
   ...

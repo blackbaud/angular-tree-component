@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  TreeNode,
-  TreeModel,
-  TREE_ACTIONS,
-  KEYS,
-  IActionMapping,
-  ITreeOptions
-} from 'angular-tree-component';
+import { TreeNode, TreeModel, TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions, TreeModule } from '@blackbaud/angular-tree-component';
+import { FormsModule } from '@angular/forms';
 
 const actionMapping: IActionMapping = {
   mouse: {
@@ -31,9 +25,9 @@ const actionMapping: IActionMapping = {
 };
 
 @Component({
-  selector: 'app-dragover-styling-fulltree',
-  styles: [
-    `
+    selector: 'app-dragover-styling-fulltree',
+    styles: [
+        `
       button: {
         line-height: 24px;
         box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
@@ -44,8 +38,8 @@ const actionMapping: IActionMapping = {
         margin: 0 3px;
       }
     `
-  ],
-  template: `
+    ],
+    template: `
     <form>
       <input
         #filter
@@ -109,7 +103,8 @@ const actionMapping: IActionMapping = {
     <button (click)="tree.treeModel.expandAll()">Expand All</button>
     <button (click)="tree.treeModel.collapseAll()">Collapse All</button>
     <button (click)="activeNodes(tree.treeModel)">getActiveNodes()</button>
-  `
+  `,
+    imports: [FormsModule, TreeModule]
 })
 export class DragOverStylingFullTreeComponent implements OnInit {
   nodes: any[];

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ITreeState } from 'angular-tree-component';
+import { ITreeState, TreeModule } from '@blackbaud/angular-tree-component';
 
 const getChildren = () => new Promise((resolve) => {
   setTimeout(() => resolve([
@@ -11,12 +11,13 @@ const getChildren = () => new Promise((resolve) => {
 });
 
 @Component({
-  selector: 'app-saverestore',
-  template: `
+    selector: 'app-saverestore',
+    template: `
     <input id="filter" #filter (keyup)="tree.treeModel.filterNodes(filter.value)" placeholder="filter nodes"/>
     <tree-root [options]="options" [(state)]="state" #tree [focused]="true" [nodes]="nodes"></tree-root>
   `,
-  styles: []
+    styles: [],
+    imports: [TreeModule]
 })
 export class SaveRestoreComponent {
   get state(): ITreeState {

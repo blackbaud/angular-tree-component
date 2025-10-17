@@ -50,7 +50,8 @@
         ],
         "@angular-eslint/no-output-rename": [
           "off"
-        ]
+        ],
+        "@angular-eslint/prefer-standalone": "off"
       }
     },
     {

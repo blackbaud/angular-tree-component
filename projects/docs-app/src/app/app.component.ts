@@ -1,16 +1,24 @@
-import { Component } from '@angular/core';
-import { MatIconRegistry } from '@angular/material/icon';
+import { Component, inject } from '@angular/core';
+import { MatIconRegistry, MatIcon } from '@angular/material/icon';
 import { DomSanitizer, Title } from '@angular/platform-browser';
 import { NavigationNode } from './navigation/navigation.model';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { MatToolbar } from '@angular/material/toolbar';
+import { MatIconButton } from '@angular/material/button';
+import { MatSidenavContainer, MatSidenav, MatSidenavContent } from '@angular/material/sidenav';
+import { NgFor, NgClass } from '@angular/common';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    imports: [MatToolbar, MatIconButton, MatIcon, MatSidenavContainer, MatSidenav, NgFor, MatSidenavContent, NgClass, RouterOutlet]
 })
 export class AppComponent {
+  private router = inject(Router);
+  private titleService = inject(Title);
+
   baseTitle = 'Angular Tree Component';
 
   nav: NavigationNode[] = [
@@ -55,12 +63,10 @@ export class AppComponent {
   ];
   currentNodes = [];
 
-  constructor(
-    iconRegistry: MatIconRegistry,
-    sanitizer: DomSanitizer,
-    private router: Router,
-    private titleService: Title,
-  ) {
+  constructor() {
+    const iconRegistry = inject(MatIconRegistry);
+    const sanitizer = inject(DomSanitizer);
+
     iconRegistry.addSvgIcon(
       'github',
       sanitizer.bypassSecurityTrustResourceUrl('assets/github-icon.svg')

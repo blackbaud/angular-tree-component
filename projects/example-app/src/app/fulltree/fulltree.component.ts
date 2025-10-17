@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TreeNode, TreeModel, TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from 'angular-tree-component';
+import { TreeNode, TreeModel, TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions, TreeModule } from '@blackbaud/angular-tree-component';
+import { FormsModule } from '@angular/forms';
 
 const actionMapping: IActionMapping = {
   mouse: {
@@ -32,9 +33,9 @@ const actionMapping: IActionMapping = {
 };
 
 @Component({
-  selector: 'app-fulltree',
-  styles: [
-    `button: {
+    selector: 'app-fulltree',
+    styles: [
+        `button: {
         line-height: 24px;
         box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
         border: none;
@@ -43,8 +44,8 @@ const actionMapping: IActionMapping = {
         cursor: pointer;
         margin: 0 3px;
       }`
-  ],
-  template: `
+    ],
+    template: `
   <form>
     <input #filter (keyup)="filterNodes(filter.value, tree)" placeholder="filter nodes"/>
   </form>
@@ -113,7 +114,8 @@ const actionMapping: IActionMapping = {
     (click)="activeNodes(tree.treeModel)">
     getActiveNodes()
   </button>
-  `
+  `,
+    imports: [FormsModule, TreeModule]
 })
 export class FullTreeComponent implements OnInit {
   nodes: any[];

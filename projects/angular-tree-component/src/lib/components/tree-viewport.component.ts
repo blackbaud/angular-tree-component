@@ -1,36 +1,32 @@
-import {
-  Component,
-  ElementRef,
-  AfterViewInit,
-  OnInit,
-  OnDestroy,
-} from '@angular/core';
+import { Component, ElementRef, AfterViewInit, OnInit, OnDestroy, inject } from '@angular/core';
 import { TreeVirtualScroll } from '../models/tree-virtual-scroll.model';
 import { TREE_EVENTS } from '../constants/events';
+import { TreeMobxAutorunDirective } from '../mobx-angular/tree-mobx-autorun.directive';
 
 @Component({
-  selector: 'tree-viewport',
-  styles: [],
-  providers: [TreeVirtualScroll],
-  template: `
+    selector: 'tree-viewport',
+    styles: [],
+    providers: [TreeVirtualScroll],
+    template: `
     <ng-container *treeMobxAutorun="{ dontDetach: true }">
       <div [style.height]="getTotalHeight()">
         <ng-content></ng-content>
       </div>
     </ng-container>
-  `
+  `,
+    imports: [TreeMobxAutorunDirective]
 })
 export class TreeViewportComponent implements AfterViewInit, OnInit, OnDestroy {
+  private elementRef = inject(ElementRef);
+  virtualScroll = inject(TreeVirtualScroll);
+
   setViewport = this.throttle(() => {
     this.virtualScroll.setViewport(this.elementRef.nativeElement);
   }, 17);
 
   private readonly scrollEventHandler: ($event: Event) => void;
 
-  constructor(
-    private elementRef: ElementRef,
-    public virtualScroll: TreeVirtualScroll
-  ) {
+  constructor() {
     this.scrollEventHandler = this.setViewport.bind(this);
   }
 

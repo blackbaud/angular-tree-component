@@ -1,11 +1,4 @@
-import {
-  Compiler,
-  Inject,
-  Injectable,
-  NgModuleFactory,
-  NgModuleRef,
-  Type,
-} from '@angular/core';
+import { Compiler, Injectable, NgModuleFactory, NgModuleRef, Type, inject } from '@angular/core';
 import { ELEMENT_MODULE_LOAD_CALLBACKS_TOKEN, WithCustomElementComponent } from './element-registry';
 import { from, Observable, of } from 'rxjs';
 import { createCustomElement } from '@angular/elements';
@@ -14,14 +7,17 @@ import { LoadChildrenCallback } from '@angular/router';
 
 @Injectable()
 export class ElementsLoader {
+  private moduleRef = inject<NgModuleRef<any>>(NgModuleRef);
+  private compiler = inject(Compiler);
+
   /** Map of unregistered custom elements and their respective module paths to load. */
   private elementsToLoad: Map<string, LoadChildrenCallback>;
   /** Map of custom elements that are in the process of being loaded and registered. */
   private elementsLoading = new Map<string, Promise<void>>();
 
-  constructor(private moduleRef: NgModuleRef<any>,
-              @Inject(ELEMENT_MODULE_LOAD_CALLBACKS_TOKEN) elementModulePaths: Map<string, LoadChildrenCallback>,
-              private compiler: Compiler) {
+  constructor() {
+    const elementModulePaths = inject<Map<string, LoadChildrenCallback>>(ELEMENT_MODULE_LOAD_CALLBACKS_TOKEN);
+
     this.elementsToLoad = new Map(elementModulePaths);
   }
 

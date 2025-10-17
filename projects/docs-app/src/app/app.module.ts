@@ -13,7 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CustomElementsModule } from './custom-elements/custom-elements.module';
 import { CodeExampleModule } from './custom-elements/code/code-example.module';
 import { ExamplesModule } from './examples/examples.module';
-import { TreeModule } from 'angular-tree-component';
+import { TreeModule } from '@blackbaud/angular-tree-component';
 import { FundamentalsModule } from './fundamentals/fundamentals.module';
 import { LayoutModule } from './layout/layout.module';
 import { SharedModule } from './shared/shared.module';

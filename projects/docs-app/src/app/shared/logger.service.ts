@@ -1,12 +1,12 @@
-import { ErrorHandler, Injectable } from '@angular/core';
+import { ErrorHandler, Injectable, inject } from '@angular/core';
 import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class Logger {
+  private errorHandler = inject(ErrorHandler);
 
-  constructor(private errorHandler: ErrorHandler) {}
 
   log(value: any, ...rest: any[]) {
     if (!environment.production) {

@@ -35,21 +35,7 @@ import { TreeAnimateOpenDirective } from './directives/tree-animate-open.directi
 
 @NgModule({
   declarations: [
-    TreeComponent,
-    TreeNodeComponent,
-    TreeNodeContent,
-    LoadingComponent,
-    TreeDropDirective,
-    TreeDragDirective,
-    TreeNodeExpanderComponent,
-    TreeNodeChildrenComponent,
-    TreeNodeDropSlot,
-    TreeNodeCollectionComponent,
-    TreeViewportComponent,
-    TreeNodeWrapperComponent,
-    TreeNodeCheckboxComponent,
-    TreeAnimateOpenDirective,
-    TreeMobxAutorunDirective
+    
   ],
   exports: [
     TreeComponent,
@@ -68,7 +54,21 @@ import { TreeAnimateOpenDirective } from './directives/tree-animate-open.directi
     TreeAnimateOpenDirective,
     TreeMobxAutorunDirective
   ],
-  imports: [CommonModule],
+  imports: [CommonModule,TreeComponent,
+    TreeNodeComponent,
+    TreeNodeContent,
+    LoadingComponent,
+    TreeDropDirective,
+    TreeDragDirective,
+    TreeNodeExpanderComponent,
+    TreeNodeChildrenComponent,
+    TreeNodeDropSlot,
+    TreeNodeCollectionComponent,
+    TreeViewportComponent,
+    TreeNodeWrapperComponent,
+    TreeNodeCheckboxComponent,
+    TreeAnimateOpenDirective,
+    TreeMobxAutorunDirective],
   providers: []
 })
 export class TreeModule {}

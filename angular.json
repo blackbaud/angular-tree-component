@@ -85,14 +85,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "example-app:build"
+            "buildTarget": "example-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "example-app:build:production"
+              "buildTarget": "example-app:build:production"
             },
             "es5": {
-              "browserTarget": "example-app:build:es5"
+              "buildTarget": "example-app:build:es5"
             }
           }
         },
@@ -217,18 +217,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "docs-app:build"
+            "buildTarget": "docs-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "docs-app:build:production"
+              "buildTarget": "docs-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "docs-app:build"
+            "buildTarget": "docs-app:build"
           }
         },
         "test": {
@@ -249,6 +249,32 @@
           }
         }
       }
+    }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "type": "component"
+    },
+    "@schematics/angular:directive": {
+      "type": "directive"
+    },
+    "@schematics/angular:service": {
+      "type": "service"
+    },
+    "@schematics/angular:guard": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:interceptor": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:module": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:pipe": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:resolver": {
+      "typeSeparator": "."
     }
   }
 }

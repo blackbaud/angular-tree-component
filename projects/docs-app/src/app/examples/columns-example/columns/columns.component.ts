@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ITreeOptions } from 'angular-tree-component';
+import { ITreeOptions, TreeModule } from '@blackbaud/angular-tree-component';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-columns',
-  templateUrl: './columns.component.html',
-  styleUrls: ['./columns.component.scss']
+    selector: 'app-columns',
+    templateUrl: './columns.component.html',
+    styleUrls: ['./columns.component.scss'],
+    imports: [NgFor, TreeModule]
 })
 export class ColumnsComponent implements OnInit {
 

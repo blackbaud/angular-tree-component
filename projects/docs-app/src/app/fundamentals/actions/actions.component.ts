@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
+import { ActionsDemoComponent } from './actions-demo/actions-demo.component';
+import { CodeExampleComponent } from '../../custom-elements/code/code-example.component';
 
 @Component({
-  selector: 'app-actions',
-  templateUrl: './actions.component.html',
-  styleUrls: ['./actions.component.scss']
+    selector: 'app-actions',
+    templateUrl: './actions.component.html',
+    styleUrls: ['./actions.component.scss'],
+    imports: [ActionsDemoComponent, CodeExampleComponent]
 })
 export class ActionsComponent {
 
   actionMapping = `
-import { TREE_ACTIONS, KEYS, IActionMapping } from 'angular-tree-component';
+import { TREE_ACTIONS, KEYS, IActionMapping } from '@blackbaud/angular-tree-component';
 
 const actionMapping: IActionMapping = {
   mouse: {
@@ -21,7 +24,7 @@ const actionMapping: IActionMapping = {
 `;
 
   mouseActions = `
-import { TREE_ACTIONS, IActionMapping } from 'angular-tree-component';
+import { TREE_ACTIONS, IActionMapping } from '@blackbaud/angular-tree-component';
 
 actionMapping: IActionMapping = {
   mouse: {
@@ -43,7 +46,7 @@ KEYS = {
 `;
 
   keysExample = `
-import { TREE_ACTIONS, KEYS, IActionMapping } from 'angular-tree-component';
+import { TREE_ACTIONS, KEYS, IActionMapping } from '@blackbaud/angular-tree-component';
 
 actionMapping:IActionMapping = {
   keys: {

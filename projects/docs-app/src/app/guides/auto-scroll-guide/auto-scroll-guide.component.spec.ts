@@ -8,8 +8,8 @@ describe('AutoScrollGuideComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AutoScrollGuideComponent ]
-    })
+    imports: [AutoScrollGuideComponent]
+})
     .compileComponents();
   });
 

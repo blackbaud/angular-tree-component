@@ -1,25 +1,15 @@
-import {
-  Directive,
-  ViewContainerRef,
-  TemplateRef,
-  OnInit,
-  OnDestroy,
-  Input,
-  EmbeddedViewRef
-} from '@angular/core';
+import { Directive, ViewContainerRef, TemplateRef, OnInit, OnDestroy, Input, EmbeddedViewRef, inject } from '@angular/core';
 import { autorun } from 'mobx';
 
 @Directive({ selector: '[treeMobxAutorun]' })
 export class TreeMobxAutorunDirective implements OnInit, OnDestroy {
+  protected templateRef = inject<TemplateRef<any>>(TemplateRef);
+  protected viewContainer = inject(ViewContainerRef);
+
   protected templateBindings = {};
   protected dispose: any;
   protected view: EmbeddedViewRef<any>;
   @Input() treeMobxAutorun;
-
-  constructor(
-    protected templateRef: TemplateRef<any>,
-    protected viewContainer: ViewContainerRef
-  ) {}
 
   ngOnInit() {
     this.view = this.viewContainer.createEmbeddedView(this.templateRef);

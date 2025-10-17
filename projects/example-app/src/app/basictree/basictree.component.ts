@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
+import { TreeModule } from '@blackbaud/angular-tree-component';
 
 @Component({
-  selector: 'app-basictree',
-  template: `
+    selector: 'app-basictree',
+    template: `
     <tree-root [focused]="true" [nodes]="nodes"></tree-root>
     <br>
     <p>Keys:</p>
     down | up | left | right | space | enter
   `,
-  styles: []
+    styles: [],
+    imports: [TreeModule]
 })
 export class BasicTreeComponent {
   nodes = [

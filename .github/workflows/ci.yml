@@ -12,12 +12,12 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version-file: '.nvmrc'
       - run: |
+          set -x
           npm ci
-          npx -p @angular/cli@14 ng build angular-tree-component
+          npm run build
+          npm run test:ci

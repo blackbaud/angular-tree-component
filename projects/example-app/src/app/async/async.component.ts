@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { ITreeOptions, TreeNode} from 'angular-tree-component';
+import { ITreeOptions, TreeNode, TreeModule } from '@blackbaud/angular-tree-component';
 
 @Component({
-  selector: 'app-async',
-  template: `
+    selector: 'app-async',
+    template: `
     <tree-root #tree [options]="options" [nodes]="nodes"></tree-root>
  `,
-  styles: []
+    styles: [],
+    imports: [TreeModule]
 })
 export class AsyncTreeComponent {
   options: ITreeOptions = {

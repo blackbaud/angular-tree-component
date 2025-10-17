@@ -8,8 +8,8 @@ describe('LargeTreeGuideComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LargeTreeGuideComponent ]
-    })
+    imports: [LargeTreeGuideComponent]
+})
     .compileComponents();
   });
 

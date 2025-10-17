@@ -1,22 +1,22 @@
-import {
-  Component,
-  Input,
-  ViewEncapsulation,
-  OnInit,
-  OnDestroy
-} from '@angular/core';
+import { Component, Input, ViewEncapsulation, OnInit, OnDestroy, forwardRef } from '@angular/core';
 import { reaction } from 'mobx';
 import { observable, computed, action } from '../mobx-angular/mobx-proxy';
 import { TreeVirtualScroll } from '../models/tree-virtual-scroll.model';
 import { TreeNode } from '../models/tree-node.model';
 import { TreeModel } from '../models/tree.model';
+import { TreeMobxAutorunDirective } from '../mobx-angular/tree-mobx-autorun.directive';
+import { NgIf, NgTemplateOutlet, NgFor } from '@angular/common';
+import { TreeNodeDropSlot } from './tree-node-drop-slot.component';
+import { TreeNodeWrapperComponent } from './tree-node-wrapper.component';
+import { TreeAnimateOpenDirective } from '../directives/tree-animate-open.directive';
+import { LoadingComponent } from './loading.component';
 
 
 @Component({
-  selector: 'tree-node-children',
-  encapsulation: ViewEncapsulation.None,
-  styles: [],
-  template: `
+    selector: 'tree-node-children',
+    encapsulation: ViewEncapsulation.None,
+    styles: [],
+    template: `
     <ng-container *treeMobxAutorun="{ dontDetach: true }">
       <div
         [class.tree-children]="true"
@@ -44,7 +44,8 @@ import { TreeModel } from '../models/tree.model';
         ></tree-loading-component>
       </div>
     </ng-container>
-  `
+  `,
+    imports: [TreeMobxAutorunDirective, TreeAnimateOpenDirective, NgIf, forwardRef(() => TreeNodeCollectionComponent), LoadingComponent]
 })
 export class TreeNodeChildrenComponent {
   @Input() node: TreeNode;
@@ -52,9 +53,9 @@ export class TreeNodeChildrenComponent {
 }
 
 @Component({
-  selector: 'tree-node-collection',
-  encapsulation: ViewEncapsulation.None,
-  template: `
+    selector: 'tree-node-collection',
+    encapsulation: ViewEncapsulation.None,
+    template: `
     <ng-container *treeMobxAutorun="{ dontDetach: true }">
       <div [style.margin-top]="marginTop">
         <tree-node
@@ -66,7 +67,8 @@ export class TreeNodeChildrenComponent {
         </tree-node>
       </div>
     </ng-container>
-  `
+  `,
+    imports: [TreeMobxAutorunDirective, NgFor, forwardRef(() => TreeNodeComponent)]
 })
 export class TreeNodeCollectionComponent implements OnInit, OnDestroy {
   @Input()
@@ -138,10 +140,10 @@ export class TreeNodeCollectionComponent implements OnInit, OnDestroy {
 }
 
 @Component({
-  selector: 'TreeNode, tree-node',
-  encapsulation: ViewEncapsulation.None,
-  styles: [],
-  template: `
+    selector: 'TreeNode, tree-node',
+    encapsulation: ViewEncapsulation.None,
+    styles: [],
+    template: `
     <ng-container *treeMobxAutorun="{ dontDetach: true }">
       <div
         *ngIf="!templates.treeNodeFullTemplate"
@@ -185,7 +187,8 @@ export class TreeNodeCollectionComponent implements OnInit, OnDestroy {
       >
       </ng-container>
     </ng-container>
-  `
+  `,
+    imports: [TreeMobxAutorunDirective, NgIf, TreeNodeDropSlot, TreeNodeWrapperComponent, TreeNodeChildrenComponent, NgTemplateOutlet]
 })
 export class TreeNodeComponent {
   @Input() node: TreeNode;
