@@ -26,9 +26,7 @@ export class TreeVirtualScroll {
   }
 
   constructor() {
-    const treeModel = this.treeModel;
-
-    treeModel.virtualScroll = this;
+    this.treeModel.virtualScroll = this;
     this._dispose = [autorun(() => this.fixScroll())];
   }
 

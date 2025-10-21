@@ -10,7 +10,7 @@ import { CodeExampleComponent } from '../../custom-elements/code/code-example.co
 export class OptionsComponent implements OnInit {
 
   options = `
-import { TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from '@circlon/@blackbaud/angular-tree-component';
+import { TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from '@blackbaud/angular-tree-component';
 
 class MyComponent {
   ...

@@ -25,11 +25,11 @@
     "angular tree component"
   ],
   "peerDependencies": {
-    "@angular/common": ">=20.0",
-    "@angular/core": ">=20.0"
+    "@angular/common": ">=20.0.0",
+    "@angular/core": ">=20.0.0"
   },
   "dependencies": {
-    "mobx": "~4.14.1",
+    "mobx": "~4.15.7",
     "tslib": "^2.5.0"
   },
   "exports": { "./css/angular-tree-component.css": { "style": "./css/angular-tree-component.css" } }

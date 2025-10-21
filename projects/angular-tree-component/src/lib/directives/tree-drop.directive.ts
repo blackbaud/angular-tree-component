@@ -16,9 +16,9 @@ export class TreeDropDirective implements AfterViewInit, OnDestroy {
   @Output('treeDropDragOver') onDragOverCallback = new EventEmitter();
   @Output('treeDropDragLeave') onDragLeaveCallback = new EventEmitter();
   @Output('treeDropDragEnter') onDragEnterCallback = new EventEmitter();
-  private readonly dragOverEventHandler: (ev: DragEvent) => void;
-  private readonly dragEnterEventHandler: (ev: DragEvent) => void;
-  private readonly dragLeaveEventHandler: (ev: DragEvent) => void;
+  private readonly dragOverEventHandler = this.onDragOver.bind(this);
+  private readonly dragEnterEventHandler = this.onDragEnter.bind(this);
+  private readonly dragLeaveEventHandler = this.onDragLeave.bind(this);
 
   private _allowDrop = (element, $event) => true;
 
@@ -31,12 +31,6 @@ export class TreeDropDirective implements AfterViewInit, OnDestroy {
 
   allowDrop($event) {
     return this._allowDrop(this.treeDraggedElement.get(), $event);
-  }
-
-  constructor() {
-    this.dragOverEventHandler = this.onDragOver.bind(this);
-    this.dragEnterEventHandler = this.onDragEnter.bind(this);
-    this.dragLeaveEventHandler = this.onDragLeave.bind(this);
   }
 
   ngAfterViewInit() {
