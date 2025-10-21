@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { BasicTreeComponent } from './basic-tree/basic-tree.component';
 import { RouterLink } from '@angular/router';
 
@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
     styleUrls: ['./basic-usage.component.scss'],
     imports: [BasicTreeComponent, RouterLink]
 })
-export class BasicUsageComponent implements OnInit {
+export class BasicUsageComponent {
 
   nodes = [
     {
@@ -31,10 +31,4 @@ export class BasicUsageComponent implements OnInit {
     { name: 'root4', children: [] },
     { name: 'root5', children: null }
   ];
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

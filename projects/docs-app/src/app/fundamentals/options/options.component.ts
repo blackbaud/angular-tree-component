@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CodeExampleComponent } from '../../custom-elements/code/code-example.component';
 
 @Component({
@@ -7,7 +7,7 @@ import { CodeExampleComponent } from '../../custom-elements/code/code-example.co
     styleUrls: ['./options.component.scss'],
     imports: [CodeExampleComponent]
 })
-export class OptionsComponent implements OnInit {
+export class OptionsComponent {
 
   options = `
 import { TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from '@blackbaud/angular-tree-component';
@@ -48,11 +48,4 @@ class MyComponent {
     scrollContainer: document.documentElement // HTML
   }
 }
-`;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+`;}

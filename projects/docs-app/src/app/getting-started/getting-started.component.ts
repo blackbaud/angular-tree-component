@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CodeExampleComponent } from '../custom-elements/code/code-example.component';
 
 @Component({
@@ -7,11 +7,4 @@ import { CodeExampleComponent } from '../custom-elements/code/code-example.compo
     styleUrls: ['./getting-started.component.scss'],
     imports: [CodeExampleComponent]
 })
-export class GettingStartedComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class GettingStartedComponent {}

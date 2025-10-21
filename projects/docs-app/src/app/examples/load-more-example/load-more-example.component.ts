@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LoadMoreComponent } from './load-more/load-more.component';
 
 @Component({
@@ -7,11 +7,4 @@ import { LoadMoreComponent } from './load-more/load-more.component';
     styleUrls: ['./load-more-example.component.scss'],
     imports: [LoadMoreComponent]
 })
-export class LoadMoreExampleComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class LoadMoreExampleComponent {}

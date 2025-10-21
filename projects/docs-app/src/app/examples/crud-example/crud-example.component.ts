@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CrudComponent } from './crud/crud.component';
 
 @Component({
@@ -7,11 +7,4 @@ import { CrudComponent } from './crud/crud.component';
     styleUrls: ['./crud-example.component.scss'],
     imports: [CrudComponent]
 })
-export class CrudExampleComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class CrudExampleComponent {}
