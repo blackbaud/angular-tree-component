@@ -1,4 +1,6 @@
-import { Component, ContentChild, EventEmitter, HostListener, Input, OnChanges, Output, TemplateRef, ViewChild, inject } from '@angular/core';
+import { Component, ContentChild, EventEmitter, HostListener, Input, OnChanges, Output, TemplateRef, ViewChild, inject,
+  ChangeDetectionStrategy
+} from '@angular/core';
 import { TreeModel } from '../models/tree.model';
 import { TreeDraggedElement } from '../models/tree-dragged-element.model';
 import { TreeOptions } from '../models/tree-options.model';
@@ -38,6 +40,7 @@ import { TreeNodeDropSlot } from './tree-node-drop-slot.component';
           </div>
       </tree-viewport>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [TreeViewportComponent, NgIf, TreeNodeCollectionComponent, TreeNodeDropSlot]
 })
 export class TreeComponent implements OnChanges {
