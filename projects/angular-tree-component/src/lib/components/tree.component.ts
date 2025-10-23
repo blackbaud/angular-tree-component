@@ -40,7 +40,6 @@ import { TreeNodeDropSlot } from './tree-node-drop-slot.component';
           </div>
       </tree-viewport>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [TreeViewportComponent, NgIf, TreeNodeCollectionComponent, TreeNodeDropSlot]
 })
 export class TreeComponent implements OnChanges {
@@ -90,11 +89,8 @@ export class TreeComponent implements OnChanges {
   @Output() stateChange;
 
   constructor() {
-    const treeModel = this.treeModel;
-
-
-    treeModel.eventNames.forEach((name) => this[name] = new EventEmitter());
-    treeModel.subscribeToState((state) => this.stateChange.emit(state));
+    this.treeModel.eventNames.forEach((name) => this[name] = new EventEmitter());
+    this.treeModel.subscribeToState((state) => this.stateChange.emit(state));
   }
 
   @HostListener('body: keydown', ['$event'])
