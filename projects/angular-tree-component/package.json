@@ -25,8 +25,8 @@
     "angular tree component"
   ],
   "peerDependencies": {
-    "@angular/common": ">=20.0.0",
-    "@angular/core": ">=20.0.0"
+    "@angular/common": ">=20.3.7",
+    "@angular/core": ">=20.3.7"
   },
   "dependencies": {
     "mobx": "~4.15.7",

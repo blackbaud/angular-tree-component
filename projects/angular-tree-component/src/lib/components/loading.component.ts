@@ -9,10 +9,8 @@ import { NgTemplateOutlet } from '@angular/common';
     @if (!template) {
       <span>loading...</span>
     }
-    <ng-container
-      [ngTemplateOutlet]="template"
-      [ngTemplateOutletContext]="{ $implicit: node }">
-    </ng-container>
+    <ng-container [ngTemplateOutlet]="template"
+      [ngTemplateOutletContext]="{ $implicit: node }" />
   `,
     imports: [NgTemplateOutlet]
 })

@@ -10,7 +10,7 @@ import { TreeMobxAutorunDirective } from '../mobx-angular/tree-mobx-autorun.dire
     template: `
     <ng-container *treeMobxAutorun="{ dontDetach: true }">
       <div [style.height]="getTotalHeight()">
-        <ng-content></ng-content>
+        <ng-content />
       </div>
     </ng-container>
   `,

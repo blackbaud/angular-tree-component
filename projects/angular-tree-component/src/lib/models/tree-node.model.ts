@@ -1,4 +1,4 @@
-import { observable, computed, reaction, autorun, action, IReactionDisposer } from 'mobx';
+import { observable, computed, reaction, action, IReactionDisposer } from 'mobx';
 import { TreeModel } from './tree.model';
 import { TreeOptions } from './tree-options.model';
 import { ITreeNode } from '../defs/api';
