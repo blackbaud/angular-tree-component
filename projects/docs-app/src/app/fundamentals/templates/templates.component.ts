@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { TemplatesDemoComponent } from './templates-demo/templates-demo.component';
+import { CodeExampleComponent } from '../../custom-elements/code/code-example.component';
 
 @Component({
-  selector: 'app-templates',
-  templateUrl: './templates.component.html',
-  styleUrls: ['./templates.component.scss']
+    selector: 'app-templates',
+    templateUrl: './templates.component.html',
+    styleUrls: ['./templates.component.scss'],
+    imports: [TemplatesDemoComponent, CodeExampleComponent]
 })
 export class TemplatesComponent {
   template = `

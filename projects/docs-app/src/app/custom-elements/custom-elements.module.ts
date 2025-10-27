@@ -9,16 +9,15 @@ import {
 import { LazyCustomElementComponent } from './lazy-custom-element.component';
 
 @NgModule({
-  declarations: [ LazyCustomElementComponent ],
-  exports: [ LazyCustomElementComponent ],
-  providers: [
-    ElementsLoader,
-    { provide: ELEMENT_MODULE_LOAD_CALLBACKS_TOKEN, useValue: ELEMENT_MODULE_LOAD_CALLBACKS },
-
-    // Providing these routes as a signal to the build system that these modules should be
-    // registered as lazy-loadable.
-    // TODO(andrewjs): Provide first-class support for providing this.
-    // { provide: ROUTES, useValue: ELEMENT_MODULE_LOAD_CALLBACKS_AS_ROUTES, multi: true },
-  ],
+    imports: [LazyCustomElementComponent],
+    exports: [LazyCustomElementComponent],
+    providers: [
+        ElementsLoader,
+        { provide: ELEMENT_MODULE_LOAD_CALLBACKS_TOKEN, useValue: ELEMENT_MODULE_LOAD_CALLBACKS },
+        // Providing these routes as a signal to the build system that these modules should be
+        // registered as lazy-loadable.
+        // TODO(andrewjs): Provide first-class support for providing this.
+        // { provide: ROUTES, useValue: ELEMENT_MODULE_LOAD_CALLBACKS_AS_ROUTES, multi: true },
+    ],
 })
 export class CustomElementsModule { }

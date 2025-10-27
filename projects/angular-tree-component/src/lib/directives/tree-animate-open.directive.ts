@@ -1,11 +1,13 @@
-import { Directive, Input, Renderer2, TemplateRef, ViewContainerRef } from '@angular/core';
+import { Directive, Input, Renderer2, TemplateRef, ViewContainerRef, inject } from '@angular/core';
 
 const EASE_ACCELERATION = 1.005;
 
-@Directive({
-  selector: '[treeAnimateOpen]'
-})
+@Directive({ selector: '[treeAnimateOpen]' })
 export class TreeAnimateOpenDirective {
+  private renderer = inject(Renderer2);
+  private templateRef = inject<TemplateRef<any>>(TemplateRef);
+  private viewContainerRef = inject(ViewContainerRef);
+
   private _isOpen: boolean;
 
   @Input('treeAnimateOpenSpeed') animateSpeed: number;
@@ -26,12 +28,6 @@ export class TreeAnimateOpenDirective {
   };
 
   private innerElement: any;
-
-  constructor(
-    private renderer: Renderer2,
-    private templateRef: TemplateRef<any>,
-    private viewContainerRef: ViewContainerRef) {
-  }
 
   private _show() {
     if (this.innerElement) return;

@@ -1,11 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { TreeNode, TreeModel, ITreeOptions } from 'angular-tree-component';
+import { TreeNode, TreeModel, ITreeOptions, TreeModule } from '@blackbaud/angular-tree-component';
 
 @Component({
-  selector: 'app-api',
-  styles: [
-  ],
-  template: `
+    selector: 'app-api',
+    styles: [],
+    template: `
   <tree-root
     #tree
     [nodes]="nodes"
@@ -55,7 +54,8 @@ import { TreeNode, TreeModel, ITreeOptions } from 'angular-tree-component';
     (click)="activeNodes(tree.treeModel)">
     getActiveNodes()
   </button>
-  `
+  `,
+    imports: [TreeModule]
 })
 export class ApiComponent {
   options: ITreeOptions = {

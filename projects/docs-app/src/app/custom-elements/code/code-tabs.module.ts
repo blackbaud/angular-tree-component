@@ -7,8 +7,7 @@ import { CodeModule } from './code.module';
 import { WithCustomElementComponent } from '../element-registry';
 
 @NgModule({
-    imports: [CommonModule, MatCardModule, MatTabsModule, CodeModule],
-    declarations: [CodeTabsComponent],
+    imports: [CommonModule, MatCardModule, MatTabsModule, CodeModule, CodeTabsComponent],
     exports: [CodeTabsComponent]
 })
 export class CodeTabsModule implements WithCustomElementComponent {

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BasicUsageComponent } from './basic-usage/basic-usage.component';
-import { TreeModule } from 'angular-tree-component';
+import { TreeModule } from '@blackbaud/angular-tree-component';
 import { BasicTreeComponent } from './basic-usage/basic-tree/basic-tree.component';
 import { RouterModule } from '@angular/router';
 import { ColumnsExampleComponent } from './columns-example/columns-example.component';

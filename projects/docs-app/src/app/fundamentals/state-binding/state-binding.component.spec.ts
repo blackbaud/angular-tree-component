@@ -8,8 +8,8 @@ describe('StateBindingComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ StateBindingComponent ]
-    })
+    imports: [StateBindingComponent]
+})
     .compileComponents();
   }));
 

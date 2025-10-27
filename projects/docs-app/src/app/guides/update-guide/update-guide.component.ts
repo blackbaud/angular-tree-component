@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { CodeExampleComponent } from '../../custom-elements/code/code-example.component';
 
 @Component({
-  selector: 'app-update-guide',
-  templateUrl: './update-guide.component.html',
-  styleUrls: ['./update-guide.component.scss']
+    selector: 'app-update-guide',
+    templateUrl: './update-guide.component.html',
+    styleUrls: ['./update-guide.component.scss'],
+    imports: [CodeExampleComponent]
 })
 export class UpdateGuideComponent {
 

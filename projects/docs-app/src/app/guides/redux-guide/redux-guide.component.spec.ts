@@ -8,8 +8,8 @@ describe('ReduxGuideComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ReduxGuideComponent ]
-    })
+    imports: [ReduxGuideComponent]
+})
     .compileComponents();
   });
 

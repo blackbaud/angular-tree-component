@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { CodeExampleComponent } from '../../custom-elements/code/code-example.component';
+import { LargeTreeComponent } from './large-tree/large-tree.component';
 
 @Component({
-  selector: 'app-large-tree-guide',
-  templateUrl: './large-tree-guide.component.html',
-  styleUrls: ['./large-tree-guide.component.scss']
+    selector: 'app-large-tree-guide',
+    templateUrl: './large-tree-guide.component.html',
+    styleUrls: ['./large-tree-guide.component.scss'],
+    imports: [CodeExampleComponent, LargeTreeComponent]
 })
 export class LargeTreeGuideComponent {
 

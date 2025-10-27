@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+import { DragDropComponent } from './drag-drop/drag-drop.component';
+import { CodeExampleComponent } from '../../custom-elements/code/code-example.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-drag-drop-guide',
-  templateUrl: './drag-drop-guide.component.html',
-  styleUrls: ['./drag-drop-guide.component.scss']
+    selector: 'app-drag-drop-guide',
+    templateUrl: './drag-drop-guide.component.html',
+    styleUrls: ['./drag-drop-guide.component.scss'],
+    imports: [DragDropComponent, CodeExampleComponent, RouterLink]
 })
 export class DragDropGuideComponent {
   options =

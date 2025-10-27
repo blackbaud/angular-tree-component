@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { IActionMapping, ITreeOptions, KEYS, TREE_ACTIONS } from 'angular-tree-component';
+import { IActionMapping, ITreeOptions, KEYS, TREE_ACTIONS, TreeModule } from '@blackbaud/angular-tree-component';
 
 @Component({
-  selector: 'app-actions-demo',
-  templateUrl: './actions-demo.component.html',
-  styleUrls: ['./actions-demo.component.scss']
+    selector: 'app-actions-demo',
+    templateUrl: './actions-demo.component.html',
+    styleUrls: ['./actions-demo.component.scss'],
+    imports: [TreeModule]
 })
 export class ActionsDemoComponent {
 

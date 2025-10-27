@@ -8,8 +8,8 @@ describe('EventsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ EventsComponent ]
-    })
+    imports: [EventsComponent]
+})
     .compileComponents();
   }));
 

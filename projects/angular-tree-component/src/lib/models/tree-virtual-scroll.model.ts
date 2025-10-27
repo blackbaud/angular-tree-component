@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { observable, computed, action, autorun, reaction } from 'mobx';
 import { TreeModel } from './tree.model';
 import { TREE_EVENTS } from '../constants/events';
@@ -8,6 +8,8 @@ const Y_EPSILON = 150; // Minimum pixel change required to recalculate the rende
 
 @Injectable()
 export class TreeVirtualScroll {
+  private treeModel = inject(TreeModel);
+
   private _dispose: any;
 
   @observable yBlocks = 0;
@@ -23,8 +25,8 @@ export class TreeVirtualScroll {
     return this.treeModel.virtualRoot ? this.treeModel.virtualRoot.height : 0;
   }
 
-  constructor(private treeModel: TreeModel) {
-    treeModel.virtualScroll = this;
+  constructor() {
+    this.treeModel.virtualScroll = this;
     this._dispose = [autorun(() => this.fixScroll())];
   }
 

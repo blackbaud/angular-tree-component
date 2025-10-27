@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { TreeModule } from '@blackbaud/angular-tree-component';
 
 @Component({
-  selector: 'app-rtl',
-  templateUrl: './rtl.component.html',
-  styleUrls: ['./rtl.component.scss']
+    selector: 'app-rtl',
+    templateUrl: './rtl.component.html',
+    styleUrls: ['./rtl.component.scss'],
+    imports: [TreeModule]
 })
 export class RtlComponent {
 

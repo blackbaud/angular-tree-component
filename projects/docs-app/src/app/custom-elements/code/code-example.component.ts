@@ -1,6 +1,7 @@
-/* tslint:disable component-selector */
+// eslint-disable @angular-eslint/component-selector
 import { Component, HostBinding, ElementRef, ViewChild, Input, AfterViewInit } from '@angular/core';
 import { CodeComponent } from './code.component';
+import { NgIf, NgClass } from '@angular/common';
 
 /**
  * An embeddable code block that displays nicely formatted code.
@@ -14,8 +15,8 @@ import { CodeComponent } from './code.component';
  * ```
  */
 @Component({
-  selector: 'code-example',
-  template: `
+    selector: 'code-example',
+    template: `
     <!-- Content projection is used to get the content HTML provided to this component -->
     <div #content style="display: none"><ng-content></ng-content></div>
     <header *ngIf="header">{{header}}</header>
@@ -28,6 +29,7 @@ import { CodeComponent } from './code.component';
               [header]="header">
     </aio-code>
   `,
+    imports: [NgIf, CodeComponent, NgClass]
 })
 export class CodeExampleComponent implements AfterViewInit {
   classes: {};

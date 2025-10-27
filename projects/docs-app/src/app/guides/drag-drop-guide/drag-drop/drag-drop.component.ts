@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { ITreeOptions, ITreeState } from 'angular-tree-component';
+import { ITreeOptions, ITreeState, TreeModule } from '@blackbaud/angular-tree-component';
 import { v4 } from 'uuid';
 
 @Component({
-  selector: 'app-drag-drop',
-  templateUrl: './drag-drop.component.html',
-  styleUrls: ['./drag-drop.component.scss']
+    selector: 'app-drag-drop',
+    templateUrl: './drag-drop.component.html',
+    styleUrls: ['./drag-drop.component.scss'],
+    imports: [TreeModule]
 })
 export class DragDropComponent {
 

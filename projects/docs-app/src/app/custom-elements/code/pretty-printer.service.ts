@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { from, Observable } from 'rxjs';
 import { first, map, share } from 'rxjs/operators';
@@ -11,10 +11,12 @@ type PrettyPrintOne = (code: string, language?: string, linenums?: number | bool
  */
 @Injectable()
 export class PrettyPrinter {
+  private logger = inject(Logger);
+
 
   private prettyPrintOne: Observable<PrettyPrintOne>;
 
-  constructor(private logger: Logger) {
+  constructor() {
     this.prettyPrintOne = from(this.getPrettyPrintOne()).pipe(share());
   }
 

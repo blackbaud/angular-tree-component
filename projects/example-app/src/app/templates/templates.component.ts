@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { ITreeOptions } from 'angular-tree-component';
+import { ITreeOptions, TreeModule } from '@blackbaud/angular-tree-component';
 
 @Component({
-  selector: 'app-templates',
-  template: `
+    selector: 'app-templates',
+    template: `
     <h3>treeNodeTemplate and loadingTemplate</h3>
     <tree-root id="tree1" [focused]="true" [nodes]="nodes1" [options]="options1">
       <ng-template #treeNodeTemplate let-node let-index="index">
@@ -43,10 +43,11 @@ import { ITreeOptions } from 'angular-tree-component';
       </ng-template>
     </tree-root>
   `,
-  styles: [
-    '.root1Class { color: blue }',
-    '.root2Class { color: red }'
-  ]
+    styles: [
+        '.root1Class { color: blue }',
+        '.root2Class { color: red }'
+    ],
+    imports: [TreeModule]
 })
 export class TemplatesComponent {
   nodes1 = [

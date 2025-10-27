@@ -61,6 +61,7 @@ npm-debug.log
 *.swp
 
 /dist
+/pack
 
 compiled
 

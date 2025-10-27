@@ -1,12 +1,14 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { TreeModule } from '@blackbaud/angular-tree-component';
 
 @Component({
-  selector: 'app-basictree',
-  template: `
+    selector: 'app-basictree',
+    template: `
     <tree-root [focused]="true" [nodes]="nodes" [options]="options"></tree-root>
   `,
-  encapsulation: ViewEncapsulation.None,
-  styles: []
+    encapsulation: ViewEncapsulation.None,
+    styles: [],
+    imports: [TreeModule]
 })
 export class RtlTreeComponent {
   options = {

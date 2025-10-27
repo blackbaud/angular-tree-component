@@ -1,10 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
-import { ITreeOptions, TreeComponent, TreeNode } from 'angular-tree-component';
+import { ITreeOptions, TreeComponent, TreeNode, TreeModule } from '@blackbaud/angular-tree-component';
 
 @Component({
-  selector: 'app-crud',
-  templateUrl: './crud.component.html',
-  styleUrls: ['./crud.component.scss']
+    selector: 'app-crud',
+    templateUrl: './crud.component.html',
+    styleUrls: ['./crud.component.scss'],
+    imports: [TreeModule]
 })
 export class CrudComponent {
 

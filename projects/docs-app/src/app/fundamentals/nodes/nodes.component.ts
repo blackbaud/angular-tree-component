@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { CodeExampleComponent } from '../../custom-elements/code/code-example.component';
 
 @Component({
-  selector: 'app-nodes',
-  templateUrl: './nodes.component.html',
-  styleUrls: ['./nodes.component.scss']
+    selector: 'app-nodes',
+    templateUrl: './nodes.component.html',
+    styleUrls: ['./nodes.component.scss'],
+    imports: [CodeExampleComponent]
 })
-export class NodesComponent implements OnInit {
+export class NodesComponent {
 
   nodes = `[
   {
@@ -16,11 +18,4 @@ export class NodesComponent implements OnInit {
       { id: 3, name: 'child2' }
     ]
   }
-]`;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+]`;}

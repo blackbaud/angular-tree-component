@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
+import { CodeExampleComponent } from '../../custom-elements/code/code-example.component';
+import { StateBindingDemoComponent } from './state-binding-demo/state-binding-demo.component';
 
 @Component({
-  selector: 'app-state-binding',
-  templateUrl: './state-binding.component.html',
-  styleUrls: ['./state-binding.component.scss']
+    selector: 'app-state-binding',
+    templateUrl: './state-binding.component.html',
+    styleUrls: ['./state-binding.component.scss'],
+    imports: [CodeExampleComponent, StateBindingDemoComponent]
 })
 export class StateBindingComponent {
   example = `
 import \{ Component \} from \'@angular/core\';
-import \{ ITreeState \} from \'angular-tree-component\';
+import \{ ITreeState \} from \'@blackbaud/angular-tree-component\';
 
 @Component(\{
   selector: \'app-saverestore\',

@@ -1,7 +1,7 @@
 {
   "name": "@blackbaud/angular-tree-component",
   "version": "PLACEHOLDER_0.0.0",
-  "description": "A simple yet powerful tree component for Angular 14+",
+  "description": "A simple yet powerful tree component for Angular",
   "author": "blackbaud",
   "homepage": "https://github.com/blackbaud/angular-tree-component",
   "license": "MIT",
@@ -25,16 +25,12 @@
     "angular tree component"
   ],
   "peerDependencies": {
-    "@angular/common": ">=14.0.0",
-    "@angular/core": ">=14.0.0"
+    "@angular/common": ">=20.3.7",
+    "@angular/core": ">=20.3.7"
   },
   "dependencies": {
-    "mobx": "~4.14.1",
-    "tslib": "^2.0.0"
+    "mobx": "~4.15.7",
+    "tslib": "^2.5.0"
   },
-  "exports": {
-    "./css/angular-tree-component.css": {
-      "style": "./css/angular-tree-component.css"
-    }
-  }
+  "exports": { "./css/angular-tree-component.css": { "style": "./css/angular-tree-component.css" } }
 }

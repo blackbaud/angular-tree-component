@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { ITreeOptions } from 'angular-tree-component';
+import { Component } from '@angular/core';
+import { ITreeOptions, TreeModule } from '@blackbaud/angular-tree-component';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-columns',
-  templateUrl: './columns.component.html',
-  styleUrls: ['./columns.component.scss']
+    selector: 'app-columns',
+    templateUrl: './columns.component.html',
+    styleUrls: ['./columns.component.scss'],
+    imports: [NgFor, TreeModule]
 })
-export class ColumnsComponent implements OnInit {
+export class ColumnsComponent {
 
   nodes = [
     {
@@ -41,11 +43,4 @@ export class ColumnsComponent implements OnInit {
     allowDrop: false
   };
 
-  columns = ['city', 'zipCode'];
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+  columns = ['city', 'zipCode'];}

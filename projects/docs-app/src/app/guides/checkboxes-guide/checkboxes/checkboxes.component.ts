@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { ITreeOptions } from 'angular-tree-component';
+import { ITreeOptions, TreeModule } from '@blackbaud/angular-tree-component';
 
 @Component({
-  selector: 'app-checkboxes',
-  templateUrl: './checkboxes.component.html',
-  styleUrls: ['./checkboxes.component.scss']
+    selector: 'app-checkboxes',
+    templateUrl: './checkboxes.component.html',
+    styleUrls: ['./checkboxes.component.scss'],
+    imports: [TreeModule]
 })
 export class CheckboxesComponent {
 

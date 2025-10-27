@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { TreeModule } from '@blackbaud/angular-tree-component';
 
 @Component({
-  selector: 'app-basic-tree',
-  templateUrl: './basic-tree.component.html',
-  styleUrls: ['./basic-tree.component.scss']
+    selector: 'app-basic-tree',
+    templateUrl: './basic-tree.component.html',
+    styleUrls: ['./basic-tree.component.scss'],
+    imports: [TreeModule]
 })
 export class BasicTreeComponent {
 

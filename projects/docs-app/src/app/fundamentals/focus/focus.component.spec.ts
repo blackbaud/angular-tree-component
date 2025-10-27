@@ -8,8 +8,8 @@ describe('FocusComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ FocusComponent ]
-    })
+    imports: [FocusComponent]
+})
     .compileComponents();
   }));
 

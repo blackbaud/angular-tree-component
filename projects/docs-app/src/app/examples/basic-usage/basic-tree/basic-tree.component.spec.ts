@@ -8,8 +8,8 @@ describe('BasicTreeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BasicTreeComponent ]
-    })
+    imports: [BasicTreeComponent]
+})
     .compileComponents();
   });
 

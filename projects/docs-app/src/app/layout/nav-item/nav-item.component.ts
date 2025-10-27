@@ -1,10 +1,15 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges, forwardRef } from '@angular/core';
 import { NavigationNode } from '../../navigation/navigation.model';
+import { NgIf, NgClass, NgFor } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { MatIcon } from '@angular/material/icon';
+
 
 @Component({
-  selector: 'app-nav-item',
-  templateUrl: './nav-item.component.html',
-  styleUrls: ['./nav-item.component.scss']
+    selector: 'app-nav-item',
+    templateUrl: './nav-item.component.html',
+    styleUrls: ['./nav-item.component.scss'],
+    imports: [NgIf, RouterLink, NgClass, MatIcon, NgFor, forwardRef(() => NavItemComponent)]
 })
 export class NavItemComponent implements OnChanges {
 

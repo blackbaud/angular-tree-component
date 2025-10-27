@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { CodeExampleComponent } from '../../custom-elements/code/code-example.component';
 
 @Component({
-  selector: 'app-expanding-guide',
-  templateUrl: './expanding-guide.component.html',
-  styleUrls: ['./expanding-guide.component.scss']
+    selector: 'app-expanding-guide',
+    templateUrl: './expanding-guide.component.html',
+    styleUrls: ['./expanding-guide.component.scss'],
+    imports: [CodeExampleComponent]
 })
 export class ExpandingGuideComponent {
 

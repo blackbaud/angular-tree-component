@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { ITreeOptions } from 'angular-tree-component';
+import { Component } from '@angular/core';
+import { ITreeOptions, TreeModule } from '@blackbaud/angular-tree-component';
 
 @Component({
-  selector: 'app-async',
-  templateUrl: './async.component.html',
-  styleUrls: ['./async.component.scss']
+    selector: 'app-async',
+    templateUrl: './async.component.html',
+    styleUrls: ['./async.component.scss'],
+    imports: [TreeModule]
 })
 export class AsyncComponent {
 

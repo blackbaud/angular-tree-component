@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AsyncGuideComponent } from './async-guide/async-guide.component';
 import { CodeExampleModule } from '../custom-elements/code/code-example.module';
-import { TreeModule } from 'angular-tree-component';
+import { TreeModule } from '@blackbaud/angular-tree-component';
 import { RouterModule } from '@angular/router';
 import { AsyncComponent } from './async-guide/async/async.component';
 import { FilterGuideComponent } from './filter-guide/filter-guide.component';
@@ -23,12 +23,12 @@ import { AutoScrollGuideComponent } from './auto-scroll-guide/auto-scroll-guide.
 import { AutoScrollComponent } from './auto-scroll-guide/auto-scroll/auto-scroll.component';
 
 @NgModule({
-  declarations: [AsyncGuideComponent, AsyncComponent, FilterGuideComponent, FilterComponent, UpdateGuideComponent, DragDropGuideComponent, DragDropComponent, CheckboxesGuideComponent, CheckboxesComponent, LargeTreeGuideComponent, LargeTreeComponent, ReduxGuideComponent, RtlGuideComponent, RtlComponent, CustomFieldsGuideComponent, ExpandingGuideComponent, AutoScrollGuideComponent, AutoScrollComponent],
-  imports: [
-    CommonModule,
-    CodeExampleModule,
-    TreeModule,
-    RouterModule
-  ]
+    imports: [
+        CommonModule,
+        CodeExampleModule,
+        TreeModule,
+        RouterModule,
+        AsyncGuideComponent, AsyncComponent, FilterGuideComponent, FilterComponent, UpdateGuideComponent, DragDropGuideComponent, DragDropComponent, CheckboxesGuideComponent, CheckboxesComponent, LargeTreeGuideComponent, LargeTreeComponent, ReduxGuideComponent, RtlGuideComponent, RtlComponent, CustomFieldsGuideComponent, ExpandingGuideComponent, AutoScrollGuideComponent, AutoScrollComponent
+    ]
 })
 export class GuidesModule { }
