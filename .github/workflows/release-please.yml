@@ -4,12 +4,10 @@ on:
     branches:
       - master
 
-env:
-  RELEASE_PR_PREFIX: 'chore: release'
 jobs:
   release:
     runs-on: ubuntu-latest
-    environment: ${{ startsWith(github.event.head_commit.message, env.RELEASE_PR_PREFIX) && 'npm' || '' }}
+    environment: "${{ startsWith(github.event.head_commit.message, 'chore: release') && 'npm' || '' }}"
     steps:
       - uses: google-github-actions/release-please-action@v3
         id: release
