@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.0-alpha.1](https://github.com/blackbaud/angular-tree-component/compare/2.0.0-alpha.0...2.0.0-alpha.1) (2025-10-28)
+
+
+### Bug Fixes
+
+* update package metadata ([#13](https://github.com/blackbaud/angular-tree-component/issues/13)) ([62ae430](https://github.com/blackbaud/angular-tree-component/commit/62ae430f6285fe15ada7036228a4b409c64433dd))
+
 ## [2.0.0-alpha.0](https://github.com/blackbaud/angular-tree-component/compare/v2.0.0-alpha.0...2.0.0-alpha.0) (2025-10-28)
 
 
