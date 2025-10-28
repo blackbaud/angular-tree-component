@@ -5,7 +5,10 @@
   "author": "blackbaud",
   "homepage": "https://github.com/blackbaud/angular-tree-component",
   "license": "MIT",
-  "repository": "https://github.com/blackbaud/angular-tree-component.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blackbaud/angular-tree-component.git"
+  },
   "bugs": {
     "url": "https://github.com/blackbaud/angular-tree-component/issues"
   },
@@ -32,5 +35,9 @@
     "mobx": "~4.15.7",
     "tslib": "^2.5.0"
   },
-  "exports": { "./css/angular-tree-component.css": { "style": "./css/angular-tree-component.css" } }
+  "exports": {
+    "./css/angular-tree-component.css": {
+      "style": "./css/angular-tree-component.css"
+    }
+  }
 }

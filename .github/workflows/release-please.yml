@@ -4,6 +4,10 @@ on:
     branches:
       - master
 
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -18,7 +22,7 @@ jobs:
           pull-request-title-pattern: 'chore: release ${version}'
           labels: 'autorelease ${{ github.ref_name }}: pending'
           release-labels: 'autorelease ${{ github.ref_name }}: tagged'
-          release-as: '2.0.0-alpha.0'
+          release-as: '2.0.0-alpha.1'
           prerelease: true
           draft-pull-request: true
           include-v-in-tag: false
